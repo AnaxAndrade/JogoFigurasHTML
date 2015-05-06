@@ -23,16 +23,20 @@ $(document).ready(function(){
 		
 		
 		if(itemAtual < 6){
+			$('#rest').html(itemAtual+2);
 			var selecionado = $("input[name='opcoes']:checked").val();
 			
 			if(items[itemAtual].fig === selecionado){
 				pontuacao++;
 				$('#pontuacao').text(pontuacao);
+				$("input[name='opcoes']:checked").parent().css('color', '#0f0');
 			}else{
-
+				$("input[name='opcoes']:checked").parent().css('color', '#f00');
 			}
-			itemAtual++;
-			proximo(itemAtual);
+			setTimeout(function(){ itemAtual++;
+				proximo(itemAtual); }
+			, 1500);
+			
 		}else{
 			alert("Fim do Jogo, teve "+pontuacao+" pontos!");
 		}
