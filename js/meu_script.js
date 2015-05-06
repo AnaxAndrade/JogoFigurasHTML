@@ -8,6 +8,7 @@ var items = [{fig: "circulo", texto: "Círculo"},
 			 {fig: "cilindro", texto: "Cilindro"},
 			];
 
+var LARGURA_LINHA = 2.5;
 var pontuacao;
 var itemAtual;
 
@@ -23,7 +24,7 @@ $(document).ready(function(){
 		
 		
 		if(itemAtual < 6){
-			$('#rest').html(itemAtual+2);
+			
 			var selecionado = $("input[name='opcoes']:checked").val();
 			
 			if(items[itemAtual].fig === selecionado){
@@ -33,7 +34,8 @@ $(document).ready(function(){
 			}else{
 				$("input[name='opcoes']:checked").parent().css('color', '#f00');
 			}
-			setTimeout(function(){ itemAtual++;
+
+			setTimeout(function(){ $('#rest').html(itemAtual+2); itemAtual++;
 				proximo(itemAtual); }
 			, 1500);
 			
@@ -97,15 +99,18 @@ function desenhar(pos){
 
 	    case "circulo":
 	    	context.beginPath();
-			context.arc(95,50,40,0,2*Math.PI);
+			context.arc(95,50,48,0,2*Math.PI);
+			context.lineWidth = LARGURA_LINHA;
 			context.stroke();
 	        break;
 	    case "quadrado":
 	    	context.fillStyle = "#000000";
+	    	context.lineWidth = LARGURA_LINHA;
 			context.strokeRect(80,20,100,100);
 	        break;
 	    case "rectangulo":
 	   		context.fillStyle = "#000000";
+	   		context.lineWidth = LARGURA_LINHA;
 			context.strokeRect(30,20,160,80);
 	        break;
 	    case "triangulo":
@@ -114,6 +119,7 @@ function desenhar(pos){
 			context.lineTo(30,120);
 			context.lineTo(150,120);
 			context.closePath();
+			context.lineWidth = LARGURA_LINHA;
 			context.stroke();
 	        break;
 	    case "paralelepipedo":
@@ -128,6 +134,7 @@ function desenhar(pos){
 			context.lineTo(60,100);
 			context.moveTo(140,120);
 			context.lineTo(180,100);
+			context.lineWidth = LARGURA_LINHA;
 			context.stroke();
 			context.closePath();
 	        break;
@@ -144,6 +151,7 @@ function desenhar(pos){
 			context.lineTo(70,20);
 			context.moveTo(120,120);
 			context.lineTo(140,80);
+			context.lineWidth = LARGURA_LINHA;
 			context.closePath();
 			context.stroke();
 	        break;
@@ -153,6 +161,7 @@ function desenhar(pos){
 			context.ellipse(120, 120, 50, 10, 0, 0, 2 * Math.PI);
 			context.moveTo(70, 30);
 			context.lineTo(70, 120);
+			context.lineWidth = LARGURA_LINHA;
 			context.closePath();
 			context.stroke();
 	        break;
