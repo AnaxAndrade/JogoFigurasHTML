@@ -1,0 +1,43 @@
+ body{
+ 	background-image: url('../imgs/fundo_vazio.png') repeat;
+ 	background-color: #222;
+ }
+
+#titulo_jogo{
+	color: #fff;
+	text-align: center;
+	margin-top: 45px;
+}
+
+ #area_jogo{
+
+ 	width: 45%;
+ 	height: 320px;
+ 	background-color: #fff;
+ 	margin: 0 auto;
+ 	border: 10px inset #fff;
+ 	padding: 10px;
+ }
+
+ #imagem_jogo{
+ 	width: 200px;
+ 	height: 140px;
+ 	border:1px solid #000000;
+ 	position: relative;
+ 	margin: 10px auto;
+
+ }
+
+ #area_respostas{
+
+
+ }
+
+ ul{
+    list-style-type: none;
+    margin-left: 25%; 
+}
+
+#btn_seguinte{
+	float: right;
+}
