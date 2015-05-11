@@ -8,6 +8,10 @@ var items = [{fig: "circulo", texto: "Círculo"},
 			 {fig: "cilindro", texto: "Cilindro"},
 			];
 
+var tamanhoItems = items.length;
+
+shuffle(items);
+
 var LARGURA_LINHA = 2.5;
 var pontuacao;
 var itemAtual;
@@ -23,19 +27,19 @@ $(document).ready(function(){
 	$('#btn_seguinte').click(function(){
 		
 		
-		if(itemAtual < 6){
+		if(itemAtual < tamanhoItems){
 			
 			var selecionado = $("input[name='opcoes']:checked").val();
 			
 			if(items[itemAtual].fig === selecionado){
 				pontuacao++;
 				$('#pontuacao').text(pontuacao);
-				$("input[name='opcoes']:checked").parent().css('color', '#0f0');
+				$("input[name='opcoes']:checked").parent().css('color', '#4Caf50');
 			}else{
-				$("input[name='opcoes']:checked").parent().css('color', '#f00');
+				$("input[name='opcoes']:checked").parent().css('color', '#d50000');
 			}
 
-			setTimeout(function(){ $('#rest').html(itemAtual+2); itemAtual++;
+			setTimeout(function(){ itemAtual++; 
 				proximo(itemAtual); }
 			, 1500);
 			
@@ -50,6 +54,8 @@ $(document).ready(function(){
 });
 
 function proximo(posicao){
+	$('#rest').html(posicao);
+
 	var copia = items.slice(0);
 	var item = copia[posicao];
 	copia.splice(posicao, 1);
@@ -73,7 +79,7 @@ function proximo(posicao){
 
 	var mostrar = "";
 	for(i=0; i < candids.length; i++){
-		mostrar += "<li><input type=\"radio\" class=\"opcoes\" name=\"opcoes\" value=\""+candids[i].fig+"\" />"+candids[i].texto+"</li>";
+		mostrar += "<li class=\"opts\"><input type=\"radio\" class=\"opcoes\" name=\"opcoes\" value=\""+candids[i].fig+"\" />"+candids[i].texto+"</li>";
 	}
 
 	$("ul#lista_respostas").html(mostrar);

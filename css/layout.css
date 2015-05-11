@@ -12,7 +12,7 @@
  #area_jogo{
 
  	width: 45%;
- 	height: 320px;
+ 	min-height: 320px;
  	background-color: #fff;
  	margin: 0 auto;
  	border: 10px inset #fff;
@@ -38,9 +38,25 @@
 }
 
 #btn_seguinte{
+	position: relative;
+	bottom: 25px;
+	right: 5px;
+	padding: 6px 12px;
 	float: right;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-align: center;
+    color: #ffffff;
+  	vertical-align: middle;
+  	font-size: 14px;
+  	font-weight: normal;
+  	background-color: #5bc0de;
+    line-height: 1.42857143;
+    border-radius: 4px;
+
 }
 
-.style_ops{
-	font-size: 22px;
+.opts{
+	font-size: 20px;
+	cursor: pointer;
 }
