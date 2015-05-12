@@ -9,6 +9,12 @@
 	margin-top: 45px;
 }
 
+.placar{
+
+	font-size: 24px;
+	float:left; 
+	width:50%;
+}
  #area_jogo{
 
  	width: 45%;
@@ -65,4 +71,8 @@
      #area_jogo{
 		width: 80%;
  	}
+ 	.placar{
+ 		width: 100%;
+ 		text-align: center !important;
+	}
 }

@@ -23,6 +23,7 @@ $(document).ready(function(){
 	proximo(itemAtual);
 
 	$('#pontuacao').text(pontuacao);
+	$('#total').text(tamanhoItems);
 
 	$('#btn_seguinte').click(function(){
 		
@@ -39,12 +40,17 @@ $(document).ready(function(){
 				$("input[name='opcoes']:checked").parent().css({color: '#d50000', fontWeight: 'bold'});
 			}
 
-			setTimeout(function(){ itemAtual++; 
-				proximo(itemAtual); }
-			, 1500);
+			itemAtual++;
+			if(itemAtual< tamanhoItems){
+				setTimeout(function(){  
+					proximo(itemAtual); }
+				, 1500);
+			}else{
+				imprimirPontuacao();
+			}
 			
 		}else{
-			alert("Fim do Jogo, teve "+pontuacao+" pontos!");
+			imprimirPontuacao();
 		}
 
 	});
@@ -53,8 +59,20 @@ $(document).ready(function(){
 
 });
 
+function imprimirPontuacao(){
+	var percent = pontuacao * 100 / tamanhoItems;
+
+	if(percent < 50){
+		alert("Fim do Jogo, obteve "+pontuacao+" pontos! \n MAU DESEMPENHO, TENTE NOVAMENTE!");
+	}else if(percent > 50 && percent < 75){
+		alert("Fim do Jogo, obteve "+pontuacao+" pontos! \n PRECISAS TREINAR MAIS!!");
+	}else{
+		alert("Fim do Jogo, obteve "+pontuacao+" pontos! \n  PARABÉNS BEM JOGADO!!!");
+	}
+};
+
 function proximo(posicao){
-	$('#rest').html(posicao);
+	$('#rest').html(posicao+1);
 
 	var copia = items.slice(0);
 	var item = copia[posicao];
