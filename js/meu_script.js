@@ -34,9 +34,9 @@ $(document).ready(function(){
 			if(items[itemAtual].fig === selecionado){
 				pontuacao++;
 				$('#pontuacao').text(pontuacao);
-				$("input[name='opcoes']:checked").parent().css('color', '#4Caf50');
+				$("input[name='opcoes']:checked").parent().css({color: '#4Caf50', fontWeight: 'bold'});
 			}else{
-				$("input[name='opcoes']:checked").parent().css('color', '#d50000');
+				$("input[name='opcoes']:checked").parent().css({color: '#d50000', fontWeight: 'bold'});
 			}
 
 			setTimeout(function(){ itemAtual++; 
