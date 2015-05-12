@@ -1,6 +1,6 @@
  body{
- 	background-image: url('../imgs/fundo_vazio.png') repeat;
- 	background-color: #222;
+ 	background-image: url('../imgs/fundos.png');
+ 	background-color: #111;
  }
 
 #titulo_jogo{
@@ -13,10 +13,10 @@
 
  	width: 45%;
  	min-height: 320px;
- 	background-color: #fff;
+ 	background-color: #eee;
  	margin: 0 auto;
- 	border: 10px inset #fff;
  	padding: 10px;
+ 	box-shadow: 5px 5px 10px #000;
  }
 
  #imagem_jogo{
@@ -39,7 +39,7 @@
 
 #btn_seguinte{
 	position: relative;
-	bottom: 25px;
+	bottom: 30px;
 	right: 5px;
 	padding: 6px 12px;
 	float: right;
